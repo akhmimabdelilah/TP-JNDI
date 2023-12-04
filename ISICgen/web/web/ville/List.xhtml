@@ -33,7 +33,7 @@
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </p:column>
-                        <p:column>
+                        <p:column filterBy="#{item.nom}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVilleTitle_nom}"/>
                             </f:facet>
@@ -41,9 +41,9 @@
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{villeController.prepareCreate}" update=":VilleCreateForm" oncomplete="PF('VilleCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":VilleViewForm" oncomplete="PF('VilleViewDialog').show()" disabled="#{empty villeController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":VilleEditForm" oncomplete="PF('VilleEditDialog').show()" disabled="#{empty villeController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{villeController.destroy}" update=":growl,datalist" disabled="#{empty villeController.selected}"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":VilleViewForm" oncomplete="PF('VilleViewDialog').show()"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":VilleEditForm" oncomplete="PF('VilleEditDialog').show()"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{villeController.destroy}" update=":growl,datalist"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
